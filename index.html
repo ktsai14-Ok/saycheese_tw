@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <!-- 確保手機版比例正確，避免過度縮放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Say Cheese | 純淨芝士蛋糕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@500;600&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'Noto Sans TC', 'sans-serif'],
+                        serif: ['Noto Serif TC', 'serif'], 
+                        hand: ['Caveat', 'cursive'],
+                        bubble: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#fcfcfc',
+                            gray: '#f3f4f6',
+                            dark: '#4b5563',
+                            black: '#1f2937'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfcfc; color: #1f2937; scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; display: none; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+        @media (min-width: 768px) { ::-webkit-scrollbar { display: block; } }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; }
+        .fade-in.appear { opacity: 1; transform: translateY(0); }
+        
+        .select-arrow {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.2em 1.2em;
+            padding-right: 2.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- 頂部流量公告列 -->
+    <div class="w-full bg-brand-black text-white text-[10px] md:text-sm tracking-widest text-center py-2 md:py-3 font-sans fixed top-0 z-[60] shadow-md px-2 leading-relaxed">
+        ✨ 感謝 Threads 熱烈迴響！預計下週三、五開放預購，歡迎至【江南咖啡】享用單片蛋糕！
+    </div>
+
+    <!-- 頂部導覽列 -->
+    <nav class="w-full bg-white/90 backdrop-blur-md fixed top-[36px] md:top-[48px] z-50 border-b border-gray-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-14 md:h-20 flex justify-between items-center">
+            <div class="w-16 md:w-24"></div>
+            <a href="#" class="flex items-center justify-center">
+                <img src="./logo.png" alt="Say Cheese Logo" class="h-8 md:h-14 object-contain" onerror="this.src='https://via.placeholder.com/150x50?text=Say+Cheese'">
+            </a>
+            <div class="w-16 md:w-24 flex justify-end space-x-3 md:space-x-4 text-xs md:text-sm text-gray-400">
+                <a href="#" class="hover:text-brand-black transition">IG</a>
+                <a href="https://line.me/ti/g2/NfZiUJznXlFHhguwWHFonwnUeRpO7pQZcpqYNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" class="hover:text-brand-black transition font-bold text-brand-black whitespace-nowrap">LINE 社群</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主視覺區 -->
+    <header class="pt-32 md:pt-48 pb-16 md:pb-24 bg-brand-light relative">
+        <div class="text-center px-4 fade-in">
+            <p class="text-[10px] md:text-xs text-gray-500 tracking-[0.3em] uppercase mb-3 md:mb-4 font-sans">Introducing Say Cheese</p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-light text-brand-black tracking-[0.1em] uppercase leading-tight mb-6 md:mb-8 font-sans">
+                Signature<br>Cheesecake
+            </h1>
+            <div class="font-serif text-gray-600 tracking-widest space-y-1.5 md:space-y-2 text-xs md:text-base">
+                <p>純淨食材，剛好的甜與濃醇</p>
+                <p>高級乳脂，低糖無負擔的溫柔甜點</p>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 md:px-6 mt-12 md:mt-16">
+            <div class="relative flex flex-col md:flex-row-reverse items-center md:items-start justify-center md:justify-start mt-10 md:mt-0 fade-in">
+                <div class="relative w-56 h-56 md:w-80 md:h-80 md:mr-20 z-10 hover:scale-105 transition duration-500">
+                    <img src="./lemon.jpg" alt="Lemon Tart" class="w-full h-full object-cover rounded-full shadow-2xl border-4 border-white" onerror="this.src='https://via.placeholder.com/400?text=Lemon'">
+                </div>
+                <div class="md:absolute md:top-1/4 md:right-[40%] text-center md:text-right mt-6 md:mt-0 z-20">
+                    <h2 class="font-bubble text-4xl md:text-5xl tracking-wide text-brand-black mb-1">Lemon</h2>
+                    <p class="font-hand text-2xl md:text-3xl text-gray-500 -mt-2 mb-3 md:mb-4">tart & cake</p>
+                    <p class="text-xs md:text-sm text-gray-500 tracking-widest font-serif leading-relaxed">清爽解膩的酸甜平衡<br>真實食材的純粹展現</p>
+                </div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start mt-16 md:-mt-10 fade-in">
+                <div class="relative w-64 h-64 md:w-96 md:h-96 md:ml-10 z-10 hover:scale-105 transition duration-500">
+                    <img src="./biscoff.jpg" alt="Biscoff Cheesecake" class="w-full h-full object-cover rounded-full shadow-2xl border-4 border-white" onerror="this.src='https://via.placeholder.com/400?text=Biscoff'">
+                </div>
+                <div class="md:absolute md:bottom-1/4 md:left-[45%] text-center md:text-left mt-6 md:mt-0 z-20">
+                    <h2 class="font-bubble text-5xl md:text-6xl tracking-wide text-brand-black mb-1">Biscoff</h2>
+                    <p class="font-hand text-3xl md:text-4xl text-gray-500 -mt-2 mb-3 md:mb-4">cheese cake</p>
+                    <p class="text-xs md:text-sm text-gray-500 tracking-widest font-serif leading-relaxed">手工熬煮焦糖與頂級乳酪<br>層次豐富的經典美味</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 芋泥流心芝士預告區 -->
+    <section class="py-16 md:py-24 bg-brand-black text-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10 md:gap-12 fade-in">
+            <div class="md:w-1/2 text-center md:text-left">
+                <p class="font-hand text-2xl md:text-3xl text-gray-400 mb-2">Upcoming Signature</p>
+                <h2 class="font-sans text-3xl md:text-5xl font-light tracking-[0.1em] uppercase mb-4 leading-tight">Taro Lava<br>Cheesecake</h2>
+                <h3 class="font-serif text-xl md:text-2xl tracking-widest mb-6 md:mb-8 text-gray-200">芋泥流心芝士</h3>
+                <p class="font-serif text-xs md:text-sm text-gray-400 leading-loose tracking-widest text-justify md:text-left">
+                    我們即將推出全新的品牌主角。嚴選在地頂級芋頭，以費時慢工熬煮出綿密純粹的芋泥，搭配法國頂級奶油乳酪。交織出溫潤, 醇厚、無負擔的全新味蕾體驗。<br><br>
+                    那些不被看見的細節打磨，只為將最純粹的溫柔，完美遞送。
+                </p>
+            </div>
+            <div class="md:w-1/2 w-full">
+                <div class="relative w-full aspect-square md:aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
+                    <img src="./taro.jpg" alt="Taro Lava Cheesecake" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition duration-700" onerror="this.src='https://via.placeholder.com/600x450?text=Taro+Lava+Cheesecake'">
+                    <div class="absolute inset-0 bg-brand-black/20 mix-blend-multiply"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 食材溯源區 -->
+    <section class="py-16 md:py-24 bg-white relative overflow-hidden border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 fade-in">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="font-hand text-3xl md:text-4xl text-gray-500 mb-2">Pure Ingredients</h2>
+                <h3 class="font-sans text-2xl md:text-4xl font-light tracking-[0.1em] text-brand-black uppercase mb-4 md:mb-6">食材溯源</h3>
+                <p class="max-w-2xl mx-auto text-gray-600 font-serif leading-loose tracking-widest text-xs md:text-sm text-justify md:text-center">
+                    真正的高級甜點，從不需要華麗修飾，只需要真實純淨的食材。我們拒絕匿名原料與工業配方，公開每一樣核心食材的產地與風味底蘊，不隱藏、不省略。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center mt-8 md:mt-12">
+                <div class="text-center group">
+                    <div class="h-40 md:h-64 flex items-center justify-center mb-6 md:mb-8">
+                        <img src="./kiri.jpg" alt="Kiri Cheese" class="max-h-full max-w-full object-contain mix-blend-darken transform group-hover:scale-105 transition duration-500" onerror="this.src='https://via.placeholder.com/300x200?text=Kiri+Cheese'">
+                    </div>
+                    <p class="font-sans text-base md:text-lg font-bold tracking-[0.15em] text-brand-black uppercase">Kiri Cheese</p>
+                    <p class="font-serif text-xs md:text-sm font-semibold text-gray-600 mt-2 tracking-widest">法國 Kiri 頂級奶油乳酪</p>
+                    <p class="font-serif text-[11px] md:text-xs text-gray-500 mt-3 md:mt-4 tracking-widest leading-loose">
+                        源自法國優質牧場，採用黃金鮮乳製程。<br>乳香濃醇純淨，賦予蛋糕入口即化的細緻綿密。
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="h-40 md:h-64 flex items-center justify-center mb-6 md:mb-8">
+                        <img src="./elle&vire.jpg" alt="Elle & Vire" class="max-h-full max-w-full object-contain mix-blend-darken transform group-hover:scale-105 transition duration-500" onerror="this.src='https://via.placeholder.com/300x200?text=Elle+%26+Vire'">
+                    </div>
+                    <p class="font-sans text-base md:text-lg font-bold tracking-[0.15em] text-brand-black uppercase">Elle & Vire</p>
+                    <p class="font-serif text-xs md:text-sm font-semibold text-gray-600 mt-2 tracking-widest">法國鐵塔牌頂級鮮奶油</p>
+                    <p class="font-serif text-[11px] md:text-xs text-gray-500 mt-3 md:mt-4 tracking-widest leading-loose">
+                        源自法國諾曼第優質乳源，純淨天然。<br>奶香濃郁且質地輕盈，為芝士蛋糕增添極致滑順的奢華口感。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三大堅持區塊 -->
+    <section class="py-16 md:py-20 bg-brand-gray">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left fade-in">
+            <div class="space-y-3 md:space-y-4">
+                <h4 class="font-sans text-base md:text-lg font-bold tracking-[0.2em] uppercase text-brand-black">01. 減糖工法</h4>
+                <p class="font-serif text-xs md:text-sm text-gray-500 leading-loose tracking-widest text-justify">
+                    減糖不減風味。我們顛覆傳統，堅持精工減糖，依靠頂級乳脂的天然濃醇襯托細緻回甘，入口清爽乾淨、尾韻綿長。
+                </p>
+            </div>
+            <div class="space-y-3 md:space-y-4">
+                <h4 class="font-sans text-base md:text-lg font-bold tracking-[0.2em] uppercase text-brand-black">02. 純淨無添加</h4>
+                <p class="font-serif text-xs md:text-sm text-gray-500 leading-loose tracking-widest text-justify">
+                    只留食材本味，捨去所有人造多餘。堅持無人工香精、無人造乳味，所有層次與香氣皆是時間與匠心醞釀的天然本味。
+                </p>
+            </div>
+            <div class="space-y-3 md:space-y-4">
+                <h4 class="font-sans text-base md:text-lg font-bold tracking-[0.2em] uppercase text-brand-black">03. 每日限量</h4>
+                <p class="font-serif text-xs md:text-sm text-gray-500 leading-loose tracking-widest text-justify">
+                    以有限匠心，締造無可替代的溫度。不做冷凍預製、不批量量產，繁複工序細心打磨，只為遞送當日最新鮮的風味。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 動態型錄區 -->
+    <section class="bg-white text-brand-black py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16 fade-in">
+                <h2 class="text-xl md:text-2xl font-light tracking-[0.2em] uppercase border-b pb-3 md:pb-4 inline-block border-gray-300 font-sans">All Flavors</h2>
+            </div>
+            <div id="dynamic-gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12 fade-in">
+                <!-- JavaScript 插入區 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 預購與金流表單 -->
+    <section class="py-16 md:py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto px-4 md:px-6 fade-in">
+            <div class="text-center mb-10 md:mb-12">
+                <h2 class="text-xl md:text-2xl font-light tracking-[0.2em] text-brand-black uppercase font-sans">Pre-Order</h2>
+                <p class="font-hand text-lg md:text-xl text-gray-500 mt-2">Make your day sweet</p>
+            </div>
+
+            <div class="bg-white p-5 md:p-8 mb-6 md:mb-8 border border-gray-200 rounded-sm shadow-sm">
+                <div class="mb-6 md:mb-8 border-b border-gray-100 pb-5 md:pb-6">
+                    <h3 class="font-sans font-bold text-brand-black tracking-widest mb-3 uppercase text-xs md:text-sm flex items-center"><span class="mr-2 text-base md:text-lg">📍</span> Pickup Location / 實體自取點</h3>
+                    <p class="font-serif text-sm text-gray-600 tracking-widest leading-relaxed font-bold">
+                        【江南咖啡 Jiangnan Coffee】
+                    </p>
+                    <p class="font-serif text-xs md:text-sm text-gray-500 mt-2 tracking-widest leading-relaxed">
+                        整顆蛋糕採線上預購，於妹妹的咖啡廳自取。<br>
+                        若想先品嚐風味，也隨時歡迎您直接前往江南咖啡，點一杯好手沖，搭配現場的單片起士蛋糕喔！
+                    </p>
+                </div>
+
+                <!-- 加入社群與匯款資訊 -->
+                <h3 class="font-sans font-bold text-brand-black tracking-widest mb-4 uppercase text-xs md:text-sm">Payment Info / 匯款資訊</h3>
+                <p class="font-serif text-xs md:text-sm text-gray-600 mb-5 md:mb-6 tracking-widest leading-relaxed">
+                    為了確保您的預訂，請您先完成付款後，再填寫下方訂購表單。出貨將以款項核對無誤後為準。
+                </p>
+                <div class="bg-brand-gray p-5 md:p-8 rounded-sm border border-gray-100 text-center mb-2 md:mb-8">
+                    <p class="font-serif text-xs md:text-sm text-brand-black tracking-widest leading-relaxed font-bold mb-3 md:mb-4 flex items-center justify-center">
+                        <span class="mr-2 text-base md:text-lg">💡</span> 詳細銀行轉帳與 LINE Pay 收款帳號
+                    </p>
+                    <p class="font-serif text-xs md:text-sm text-gray-600 tracking-widest leading-relaxed mb-5 md:mb-6">
+                        已公告於我們的「LINE 專屬預購社群」記事本中。<br class="hidden md:block">
+                        請先加入社群取得匯款資料，完成轉帳後，再於下方表單填寫您的「帳號末五碼」喔！
+                    </p>
+                    
+                    <!-- 專屬社群邀請卡片 (使用更新後的 line-qrcode.jpg 檔名) -->
+                    <div class="bg-white p-4 md:p-5 rounded-md shadow-sm border border-gray-200 inline-block w-full max-w-[320px] md:max-w-sm">
+                        <p class="text-xs md:text-sm text-brand-black font-bold mb-2 md:mb-3 tracking-widest leading-relaxed">
+                            🎉 您已被邀請加入<br>「Say Cheese 🍰 預購與最新消息」！
+                        </p>
+                        <p class="text-[10px] md:text-xs text-gray-500 mb-3 md:mb-4 tracking-widest">請點選以下連結或掃描 QR Code 加入社群！</p>
+                        <!-- QR Code 圖片 -->
+                        <img src="./line-qrcode.jpg" alt="LINE 社群 QR Code" class="w-32 h-32 md:w-40 md:h-40 mx-auto mb-3 md:mb-4 object-contain border border-gray-100 rounded-sm" onerror="this.src='https://via.placeholder.com/160?text=QR+Code'">
+                        <!-- 按鈕連結 -->
+                        <a href="https://line.me/ti/g2/NfZiUJznXlFHhguwWHFonwnUeRpO7pQZcpqYNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" class="block w-full bg-[#06C755] text-white text-xs md:text-sm font-bold tracking-widest py-3 rounded-full hover:bg-[#05b34c] transition duration-300 shadow-md">
+                            點我加入 LINE 社群
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 表單區塊開始 -->
+            <div class="bg-white p-5 md:p-12 shadow-sm border border-gray-100 rounded-sm relative">
+                
+                <form id="orderForm" class="space-y-5 md:space-y-6 font-sans">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">NAME / 姓名</label>
+                            <input type="text" name="顧客姓名" required class="w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">PHONE / 電話</label>
+                            <input type="tel" name="聯絡電話" required class="w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition">
+                        </div>
+                    </div>
+                    
+                    <div class="pt-2 md:pt-4">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">FLAVOR / 選擇口味</label>
+                        <select name="訂購口味" required class="select-arrow w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition appearance-none font-serif tracking-widest">
+                            <option value="">請選擇...</option>
+                            <option value="芋泥流心芝士 (Taro Lava Cheesecake)">芋泥流心芝士 (Taro Lava Cheesecake)</option>
+                            <option value="炙燒檸檬派 (Lemon Tart)">炙燒檸檬派 (Lemon Tart)</option>
+                            <option value="焦糖起士蛋糕 (Biscoff Cheesecake)">焦糖起士蛋糕 (Biscoff Cheesecake)</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 pt-2 md:pt-4">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">PICKUP DATE / 取貨日 <span class="text-brand-black font-serif ml-1 tracking-normal">(※ 限定下週三、五)</span></label>
+                            <input type="date" name="取貨日期" required class="w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition font-serif">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">PICKUP TIME / 取貨時間 <span class="text-gray-400 font-serif ml-1 tracking-normal">(江南咖啡)</span></label>
+                            <select name="取貨時間" required class="select-arrow w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition font-serif tracking-widest">
+                                <option value="">請選擇時段...</option>
+                                <option value="11:00-12:00">11:00 - 12:00</option>
+                                <option value="13:00-14:00">13:00 - 14:00</option>
+                                <option value="14:00-15:00">14:00 - 15:00</option>
+                                <option value="15:00-16:00">15:00 - 16:00</option>
+                                <option value="16:00-17:00">16:00 - 17:00</option>
+                                <option value="17:00-18:00">17:00 - 18:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 pt-4 md:pt-4 bg-brand-light p-4 rounded-sm border border-gray-100">
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">PAYMENT METHOD / 付款方式</label>
+                            <select name="付款方式" required class="select-arrow w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition font-serif tracking-widest">
+                                <option value="">請選擇...</option>
+                                <option value="銀行轉帳">銀行轉帳</option>
+                                <option value="Line Pay">Line Pay</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">PAYMENT REF / 帳號後五碼 (或 Line 名稱)</label>
+                            <input type="text" name="對帳末五碼" required placeholder="對帳用，務必填寫" class="w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition placeholder-gray-300 font-serif">
+                        </div>
+                    </div>
+
+                    <div class="pt-2 md:pt-4">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-400 tracking-wider mb-2">ORDER NOTES / 訂單備註 (選填)</label>
+                        <textarea name="訂單備註" rows="2" placeholder="是否有過敏原、需不需要蠟燭等..." class="w-full border-b border-gray-300 bg-transparent py-3 md:py-2 text-base md:text-sm text-gray-800 focus:outline-none focus:border-brand-black transition placeholder-gray-300 font-serif"></textarea>
+                    </div>
+
+                    <div class="pt-6 md:pt-8">
+                        <button type="submit" class="w-full bg-brand-black text-white font-bold tracking-widest uppercase py-4 hover:bg-gray-700 transition duration-300 text-sm disabled:opacity-50 shadow-lg">
+                            Submit Order
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="bg-white border-t border-gray-100 py-10 md:py-12 text-center">
+        <img src="./logo.png" alt="Say Cheese Logo" class="h-12 md:h-16 mx-auto mb-4 md:mb-6 object-contain opacity-50" onerror="this.src='https://via.placeholder.com/150x50?text=Say+Cheese'">
+        <p class="text-[10px] md:text-xs text-gray-400 tracking-widest font-sans">&copy; 2026 Say Cheese. All rights reserved.</p>
+    </footer>
+
+    <!-- 成功彈跳視窗 (Toast) -->
+    <div id="toast" class="fixed bottom-5 left-4 right-4 md:left-auto md:right-10 md:bottom-10 bg-brand-black text-white px-5 md:px-6 py-4 rounded-md md:rounded-sm shadow-2xl transform translate-y-[150%] opacity-0 transition-all duration-500 z-[100] border-l-4 border-green-400">
+        <p class="text-xs md:text-sm tracking-wider flex items-center font-serif justify-center md:justify-start">
+            <svg class="w-5 h-5 mr-2 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span id="toast-message">訂單已成功送出！期待與您見面！</span>
+        </p>
+    </div>
+
+    <!-- 腳本區塊 -->
+    <script>
+        const cakeData = [
+            { name: '芋泥流心芝士', en: 'Taro Lava Cheesecake', image: './taro.jpg' },
+            { name: '炙燒檸檬派', en: 'Lemon Tart', image: './lemon.jpg' },
+            { name: '焦糖起士蛋糕', en: 'Biscoff Cheesecake', image: './biscoff.jpg' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryContainer = document.getElementById('dynamic-gallery');
+            cakeData.forEach(cake => {
+                const card = document.createElement('div');
+                card.className = 'text-center group cursor-pointer';
+                card.innerHTML = `
+                    <div class="overflow-hidden mb-3 md:mb-6 rounded-sm shadow-sm bg-gray-50">
+                        <img src="${cake.image}" alt="${cake.en}" class="w-full aspect-square object-cover transform group-hover:scale-105 transition duration-700 opacity-90 group-hover:opacity-100" onerror="this.src='https://via.placeholder.com/300?text=${cake.en}'">
+                    </div>
+                    <h3 class="text-[11px] md:text-sm font-bold tracking-widest uppercase mb-1 font-sans text-brand-black">${cake.en}</h3>
+                    <p class="text-[10px] md:text-xs text-gray-500 font-serif tracking-widest">${cake.name}</p>
+                `;
+                galleryContainer.appendChild(card);
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('translate-y-[150%]', 'opacity-0');
+            setTimeout(() => toast.classList.add('translate-y-[150%]', 'opacity-0'), 4000); 
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            const data = new FormData(form);
+            
+            fetch('https://formspree.io/f/xnpqazvk', {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    showToast('🎉 訂單已成功送出！期待與您見面！');
+                    form.reset();
+                } else {
+                    showToast('⚠️ 訂單送出失敗，請檢查資料或稍後再試。');
+                }
+                btn.disabled = false;
+                btn.textContent = 'Submit Order';
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }).catch(error => {
+                showToast('⚠️ 網路錯誤，請稍後再試！');
+                btn.disabled = false;
+                btn.textContent = 'Submit Order';
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            });
+        });
+    </script>
+</body>
+</html>
